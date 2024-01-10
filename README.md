@@ -1,4 +1,4 @@
-# analysis_a
+# Vaccine registry project template
 
 A [workflowr][] project.
 

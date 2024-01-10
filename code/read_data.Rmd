@@ -1,0 +1,40 @@
+---
+title: "Working with vaccine registry dataset"
+output:
+  html_document:
+    df_print: paged
+---
+
+# 1. Load libraries 
+It is recommended to work with the dataset using Apache Arrow due to the large amount of data in the dataset
+
+[Arrow reading list](https://github.com/OUCRU-Modelling/vaxr-documents/blob/main/Arrow%20reading%20list.md)
+
+```{r}
+library(arrow) 
+library(tidyverse)
+```
+
+
+--- 
+# 2. Read data 
+```{r sample code for loading data}
+path <- file.path("/","cluster_data", "vrdata", "cleaned")
+
+# --- load data for vaccination records
+data <- open_dataset(file.path(path, "vacname"))
+
+# --- load data for personal info
+personal_info <- read_parquet(file.path(path, "personal_info.parquet"), as_data_frame = FALSE)
+
+# --- load data for vaccination records with pathogen label
+pathogen_data <- open_dataset(file.path(path, "vacname"))
+```
+
+
+--- 
+# 3. Analysis
+```{r}
+#TODO:
+```
+
